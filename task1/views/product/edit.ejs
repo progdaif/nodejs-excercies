@@ -1,0 +1,33 @@
+<div class="card" >
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-12">
+            <h4 style="text-align:center;">Add New Product</h4>
+        </div>
+      </div>
+      <% if(typeof msg[0] != 'undefined'){ %>
+        <div class="alert alert-danger" role="alert">
+          <%= msg[0] %>
+        </div>
+      <% } %>
+
+      <form  method="post" action="/update/<%= data.id %>?_method=PUT">
+          <div class="mb-3 mt-3">
+            <label for="name" class="form-label">Product Name:</label>
+            <input type="text" class="form-control" value="<%= data.name %>" required id="name" placeholder="Enter Product Name" name="name">
+          </div>
+  
+          <div class="mb-3 mt-3">
+            <label for="Quantity" class="form-label">Product Quantity:</label>
+            <input type="number" class="form-control" value="<%= data.quantity %>" required id="Quantity" placeholder="Enter Product Quantity" name="quantity">
+          </div>
+  
+          <div class="mb-3 mt-3">
+            <label for="Brand" class="form-label">Product Brand:</label>
+            <input type="text" class="form-control" value="<%= data.brand %>" required id="Brand" placeholder="Enter Product Brand" name="brand">
+          </div>
+          
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+  </div>
+  </div>
